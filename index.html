@@ -189,17 +189,16 @@ Daniel poured himself into the mission, reaching out to local African chefs and 
 
 
 
-   const img = document.getElementById("img");
-   let i = img.getAttribute("src");
-    if (i === "")
-    {
-      
-      img.style.margin = "30px";
-      img.style.position = "absolute";
-      img.style.zIndex = "30";
-      img.style.top = "200px";
-      
-    }
+const img = document.getElementById("img");
+const src = img.getAttribute("src");
+
+if (src === "") {
+  img.style.margin = "30px";
+  img.style.position = "absolute";
+  img.style.zIndex = "30";
+  img.style.top = "500px";
+}
+
     
   </script>
 
