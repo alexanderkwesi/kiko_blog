@@ -3,98 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kiko and The Outreach of Words</title>
+  <title>Kiko Blog Paginated</title>
   <script src="https://cdn.tailwindcss.com?plugins=line-clamp"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed" >
 
-  <!-- Hero Section -->
-<header class="bg-gradient-to-r from-yellow-400 via-orange-600 to-green-800 text-white py-12 px-6 text-center">
-  <h1 class="flex flex-row items-center justify-center text-4xl md:text-5xl font-bold mb-4">
-    <img src="kiko_logo.png" alt="Kiko Logo" width="70" height="70" class="mr-3" />
-    Kiko and The Outreach of Words
-  </h1>
-  <p class="text-xl">Stories of poetry, food, culture, and heartfelt beginnings</p>
-</header>
+  <!-- Header with Kiko Colors -->
+  <header class="bg-gradient-to-r from-yellow-400 via-orange-600 to-green-800 text-white py-12 px-6 text-center">
+    <h1 class="flex flex-row items-center justify-center text-4xl md:text-5xl font-bold mb-4">
+      <img src="kiko_logo.png" alt="Logo" width="70" height="70" class="mr-3" />
+      Kiko and The Outreach of Words
+    </h1>
+    <p class="text-xl">Stories of poetry, food, culture, and heartfelt beginnings</p>
+  </header>
 
-  <main class="max-w-5xl mx-auto px-8 py-10">
-    <!-- Blog Posts Section -->
-    <div id="postContainer" class="flex flex-row flex-nowarp align-center jusitfy-center space-x-4 m-6">
+  <main class="max-w-5xl mx-auto px-8 py-10 flex flex-col flex-wrap  align-center justify-center m-6 gap-6">
+    <!-- Post container -->
+    <div id="postContainer" class="flex flex-col flex-nowarp align-center jusitfy-center space-x-4 m-6"></div>
 
-      <!-- Blog Post 1 -->
-      <div class="post-card bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 lg:w-[900px]">
-        <img src="food_1.jpg" alt="Poetry Banner" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="linkedin.jpeg" class="w-10 h-10 rounded-full border" alt="Kiko" />
-            <span class="text-sm text-gray-600">By <strong>Kiko</strong> – Afrilish Writer</span>
-          </div>
-          <h3 class="text-xl font-semibold text-purple-700 mb-2">The Poetry of Daniel Eze</h3>
-          <p class="text-gray-700 leading-relaxed line-clamp-5 transition-all duration-500 overflow-hidden max-h-[10rem]" id="postText1">
-In the quiet corners of a foreign city,
-Where the streets hum with distant voices,
-Daniel sits with memories steeped in spice—
-A bowl of jollof, steam rising like stories untold,
-And books on culture, travel, and the art of food
-Spilling worlds across his worn wooden table.
+    <!-- Pagination controls -->
+    <div class="flex justify-center items-center space-x-3 text-sm">
+      <button id="prevBtn" class="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 disabled:opacity-50">Previous</button>
+      <span id="pageInfo" class="font-medium"></span>
+      <button id="nextBtn" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50">Next</button>
+    </div>
+  </main>
+    <footer class="text-center py-6 text-sm text-gray-500 border-t mt-10">
+    &copy; 2025 Kiko & The Outreach of Words | Designed with ❤️ by Kiko
+  </footer>
+  <script>
+    const postsPerPage = 2;
+    let currentPage = 1;
+
+    const posts = [
+      {
+        id: 1,
+        title: "The Poetry of Daniel Eze",
+        expected: "COMING SOON!!!",
+        img: "food_1.jpg",
+        text: `In the quiet corners of a foreign city,
+ Where the streets hum with distant voices,
+ Daniel sits with memories steeped in spice—
+ A bowl of jollof, steam rising like stories untold,
+ And books on culture, travel, and the art of food
+ Spilling worlds across his worn wooden table.
 His heart beats with the warmth of home—
-Not a whisper of regret, but a roar of pride,
-A pulse woven from the rhythms of market roads,
-The laughter of mothers stirring pots at dawn,
-And the fire of tradition carried on every leaf and grain.
+ Not a whisper of regret, but a roar of pride,
+ A pulse woven from the rhythms of market roads,
+ The laughter of mothers stirring pots at dawn,
+ And the fire of tradition carried on every leaf and grain.
 He dreams with eyes wide open—
-Seeing a bridge where there was once a gulf,
-A digital tapestry connecting kitchens and hearts,
-Where African flavors journey beyond borders,
-Landing softly on doorsteps hungry for belonging.
+ Seeing a bridge where there was once a gulf,
+ A digital tapestry connecting kitchens and hearts,
+ Where African flavors journey beyond borders,
+ Landing softly on doorsteps hungry for belonging.
 Daniel’s vision is a feast of identity—
-A celebration in every bite,
-The richness of egusi, the smoke of suya,
-The sweetness of plantains kissed by time and sun.
+ A celebration in every bite,
+ The richness of egusi, the smoke of suya,
+ The sweetness of plantains kissed by time and sun.
 He walks not alone but with the strength of a people,
-Calling forth chefs, storytellers, and dreamers alike,
-Building Afrilish not just as a platform,
-But as a home where culture thrives and grows.
+ Calling forth chefs, storytellers, and dreamers alike,
+ Building Afrilish not just as a platform,
+ But as a home where culture thrives and grows.
 His is a heart open wide,
-A beacon shining bright with pride and purpose—
-A man who knows that food carries more than flavor,
-It carries a legacy, a story, a place called home.
+ A beacon shining bright with pride and purpose—
+ A man who knows that food carries more than flavor,
+ It carries a legacy, a story, a place called home.
 And so, with every meal delivered,
-With every flavor shared,
-Daniel Eze writes the poetry of connection—
-A living, breathing tribute to Africa’s soul.
-          </p>
-          <button class="mt-3 text-sm text-purple-600 hover:underline focus:outline-none" onclick="togglePost('postText1', this)">Read more</button>
-        </div>
-      </div>
-
-      <!-- Blog Post 2 -->
-      <div class="post-card bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 lg:w-[900px]">
-        <img src="culture_1.jpg" alt="Culture Banner" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="linkedin.jpeg" class="w-10 h-10 rounded-full border" alt="Kiko" />
-            <span class="text-sm text-gray-600">By <strong>Kiko</strong> – Afrilish Writer</span>
-          </div>
-          <h3 class="text-xl font-semibold text-red-600 mb-2">From Kitchen Dreams to Doorstep Delights</h3>
-          <p class="text-gray-700 leading-relaxed line-clamp-5 transition-all duration-500 overflow-hidden max-h-[10rem]" id="postText2">
-In a small London flat, far from the sunlit streets of West Africa, Daniel sat quietly with a steaming bowl of home-cooked jollof rice. The familiar aroma transported him back to his mother’s kitchen — a place filled with laughter, spice, and the comforting hum of family life. But outside his window, the city felt distant, and something was missing. Around him, there were very few places that captured the richness of African cuisine in all its diversity. He began to notice how hard it was to find not just the dishes of home, but the stories, warmth, and cultural connection they carried.
+ With every flavor shared,
+ Daniel Eze writes the poetry of connection—
+ A living, breathing tribute to Africa’s soul.`,
+        color: "text-purple-700"
+      },
+      {
+        id: 2,
+        title: "From Kitchen Dreams to Doorstep Delights",
+        expected: "COMING SOON!!!",
+        img: "culture_1.jpg",
+        text: `In a small London flat, far from the sunlit streets of West Africa, Daniel sat quietly with a steaming bowl of home-cooked jollof rice. The familiar aroma transported him back to his mother’s kitchen — a place filled with laughter, spice, and the comforting hum of family life. But outside his window, the city felt distant, and something was missing. Around him, there were very few places that captured the richness of African cuisine in all its diversity. He began to notice how hard it was to find not just the dishes of home, but the stories, warmth, and cultural connection they carried.
 Daniel, a lover of books, often immersed himself in stories of global travel, rich culinary traditions, and the power of culture to bring people together. Those pages inspired him deeply. With every book he read, he became more convinced that food was far more than nourishment—it was identity, memory, and a bridge to belonging. An idea began to grow in his mind: what if there was a way to help others in the African community feel that same connection, no matter where they were?
 That spark turned into Afrilish—a vision to create a digital platform where African restaurants could be celebrated, supported, and discovered. Not just a food delivery app, but a cultural showcase. Afrilish would be the bridge between kitchens steeped in heritage and homes longing for authenticity. From egusi to suya, from plantains to puff-puff, these weren’t just meals—they were stories waiting to be shared.
 Daniel poured himself into the mission, reaching out to local African chefs and restaurant owners, explaining his dream. They saw the vision too. Afrilish was built with heart, passion, and the determination to ensure that African food would not only survive in the diaspora but thrive. Today, Afrilish stands as more than a business—it’s a movement, bringing the flavors of the motherland right to your doorstep. And it all began with a simple bowl of rice, a good book, and one man’s hunger for home.
-          </p>
-          <button class="mt-3 text-sm text-red-600 hover:underline focus:outline-none" onclick="togglePost('postText2', this)">Read more</button>
-        </div>
-      </div>
+`,
+        color: "text-red-600"
+      },
+      {
+        id: 3,
+        title: "Volume I: The Fire in the Market",
+        expected: "COMING SOON!!!",
+        img: "", 
+        text: `He walked the market streets of Lagos with nothing but spice-scented wind and memory...`,
+        color: "text-yellow-700"
+      },
+      {
+        id: 4,
+        title: "Volume I: A Taste of Belonging",
+        expected:  "COMING SOON!!!",
+        img: "",
+        text: `That first bite of plantain wasn’t just food—it was a hymn of home...`,
+        color: "text-green-700"
+      }
+    ];
 
-    </div>
-  </main>
+    function displayPosts() {
+      const container = document.getElementById("postContainer");
+      container.innerHTML = "";
 
-  <footer class="text-center py-6 text-sm text-gray-500 border-t mt-10">
-    &copy; 2025 Kiko & The Outreach of Words | Designed with ❤️ by Kiko
-  </footer>
+      const start = (currentPage - 1) * postsPerPage;
+      const end = start + postsPerPage;
+      const visiblePosts = posts.slice(start, end);
 
-  <script>
+      visiblePosts.forEach((post, index) => {
+        const card = document.createElement("div");
+        card.className = "post-card bg-white shadow-xl rounded-2xl overflow-hidden transition-all duration-300 lg:w-[900px] m-6"; 
+        //card.setAttribute("onmouseover", "toggleImageText()");
+        card.innerHTML = `
+          <img id="img" src="${post.img}" alt="${post.title}" class="w-full h-56 object-cover visible" >
+          <p id="p" class="text-center text-3xl p-2 m-2">${post.img === "" ? post.expected : ""}</p>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="linkedin.jpeg" class="w-10 h-10 rounded-full border" alt="Kiko" />
+              <span class="text-sm text-gray-600">By <strong>Kiko</strong> – Afrilish Writer</span>
+            </div>
+            <h3 class="text-xl font-semibold ${post.color} mb-2">${post.title}</h3>
+            <p class="text-gray-700 leading-relaxed line-clamp-5 transition-all duration-500 max-h-[10rem]" id="postText${post.id}">
+              ${post.text}
+            </p>
+            <button class="mt-3 text-sm ${post.color} hover:underline focus:outline-none"
+              onclick="togglePost('postText${post.id}', this)">Read more</button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      // Update pagination controls
+      document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${Math.ceil(posts.length / postsPerPage)}`;
+      document.getElementById("prevBtn").disabled = currentPage === 1;
+      document.getElementById("nextBtn").disabled = currentPage === Math.ceil(posts.length / postsPerPage);
+    }
+
+
+
+    // Button events
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        displayPosts();
+      }
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (currentPage < Math.ceil(posts.length / postsPerPage)) {
+        currentPage++;
+        displayPosts();
+      }
+    });
+
+
     function togglePost(postId, btn) {
       const text = document.getElementById(postId);
       const isCollapsed = text.classList.contains('line-clamp-5');
@@ -117,8 +183,10 @@ Daniel poured himself into the mission, reaching out to local African chefs and 
     postCard.classList.add("w-[700px]");
 
     postContainer.after(postCard, postContainer);
+
+    // Initial display
+    displayPosts();
   </script>
 
 </body>
 </html>
-
