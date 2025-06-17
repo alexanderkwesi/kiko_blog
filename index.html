@@ -193,8 +193,10 @@ Daniel poured himself into the mission, reaching out to local African chefs and 
    let i = img.getAttribute("src");
     if (i === "")
     {
-      let z = img.getAttribute("alt");
-      z.style.margin = "30px";
+      
+      img.style.margin = "30px";
+      img.style.position = "relative";
+      img.style.zIndex = "30";
     }
     
   </script>
