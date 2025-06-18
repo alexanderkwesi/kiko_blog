@@ -217,6 +217,8 @@ if (src === "") {
   img.style.zIndex = "30";
   img.style.top = "200px";
 }
+    
+document.getElementById("pageInfo").addEventListener("load", function (){   
 
 if (
   !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") &&
@@ -226,6 +228,7 @@ if (
     displayPosts();
   }, 5000);
 }
+});
   </script>
 
 </body>
