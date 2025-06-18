@@ -218,23 +218,20 @@ if (src === "") {
   img.style.top = "200px";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
 
-displayPosts();
     
-document.getElementById("leading-relaxed").addEventListener("mouseover", function (){   
+
 
 if (
-  !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") &&
+  !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") ||
   !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/index.html")
 ) {
   setTimeout(() => {
     displayPosts();
   }, 5000);
 }
-});
 
-  });
+
 
   </script>
 
