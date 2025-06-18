@@ -164,7 +164,6 @@ Daniel poured himself into the mission, reaching out to local African chefs and 
       document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${Math.ceil(posts.length / postsPerPage)}`;
       document.getElementById("prevBtn").disabled = currentPage === 1;
       document.getElementById("nextBtn").disabled = currentPage === Math.ceil(posts.length / postsPerPage);
-       displayPosts();
     }
 
 
@@ -223,11 +222,6 @@ if (src === "") {
 
 
     
-
-
-document.addEventListener("load", () => {
-  displayPosts(); // shows list immediately on page load
-});
 
 
   </script>
