@@ -224,18 +224,9 @@ if (src === "") {
     
 
 
-if (
-  !location.pathname.includes("/kiko_blog/") &&
-  !location.pathname.includes("/kiko_blog/index.html")
-)
-{
-  setTimeout(() => {
-    displayPosts();
-    alert("Hi");
-  }, 500);
-}
-
-    alert("hi");
+document.addEventListener("DOMContentLoaded", () => {
+  displayPosts(); // shows list immediately on page load
+});
 
 
   </script>
