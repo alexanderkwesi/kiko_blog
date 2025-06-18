@@ -213,6 +213,7 @@ const img = document.getElementById("img");
 const src = img.getAttribute("src");
 
 if (src === "") {
+  img.style.display = "none";
   img.style.margin = "30px";
   img.style.position = "absolute";
   img.style.zIndex = "30";
