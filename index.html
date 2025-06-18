@@ -218,11 +218,11 @@ if (src === "") {
   img.style.top = "200px";
 }
 
-if(window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") === -1)
+if(window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") === -1 || window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/index.html") === -1 )
 {
     SetTimeout(() => {
       displayPosts();
-    });
+    }, 5000);
 }
   </script>
 
