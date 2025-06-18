@@ -223,8 +223,7 @@ if (src === "") {
 
 
 if (
-  !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/") ||
-  !window.location.href.includes("https://alexanderkwesi.github.io/kiko_blog/index.html")
+  document.getElementById("pageInfo").textContent === ""
 ) {
   setTimeout(() => {
     displayPosts();
