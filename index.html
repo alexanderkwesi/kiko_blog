@@ -222,13 +222,15 @@ if (src === "") {
     
 
 
-if (
-  document.getElementById("preBtn").style.display === "block"
-&& document.getElementById("nextBtn").style.display === "block") {
+const preBtnVisible = window.getComputedStyle(document.getElementById("preBtn")).display === "block";
+const nextBtnVisible = window.getComputedStyle(document.getElementById("nextBtn")).display === "block";
+
+if (preBtnVisible && nextBtnVisible) {
   setTimeout(() => {
     displayPosts();
   }, 500);
 }
+
 
 
 
