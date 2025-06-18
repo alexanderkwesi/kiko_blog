@@ -222,15 +222,16 @@ if (src === "") {
     
 
 
-const preBtnVisible = window.getComputedStyle(document.getElementById("preBtn")).display === "block";
-const nextBtnVisible = window.getComputedStyle(document.getElementById("nextBtn")).display === "block";
-
-if (preBtnVisible && nextBtnVisible) {
+if (
+  !location.pathname.includes("/kiko_blog/") &&
+  !location.pathname.includes("/kiko_blog/index.html")
+)
+{
   setTimeout(() => {
     displayPosts();
+    alert("Hi");
   }, 500);
 }
-
 
 
 
