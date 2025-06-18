@@ -223,11 +223,11 @@ if (src === "") {
 
 
 if (
-  document.getElementById("pageInfo").textContent === ""
-) {
+  document.getElementById("preBtn").style.display === "block"
+&& document.getElementById("nextBtn").style.display === "block") {
   setTimeout(() => {
     displayPosts();
-  }, 5000);
+  }, 500);
 }
 
 
